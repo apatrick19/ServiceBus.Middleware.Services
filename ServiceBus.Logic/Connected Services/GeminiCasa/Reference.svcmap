@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="45b9650e-f805-4059-8b44-eeb4409c409d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://demo.geminiapp.net/service/casa.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CASA.xsd" MetadataType="Schema" ID="43ef9b7a-008a-49ef-8660-028971a79851" SourceId="1" SourceUrl="http://demo.geminiapp.net/service/CASA.svc?xsd=xsd0" />
+    <MetadataFile FileName="CASA1.xsd" MetadataType="Schema" ID="0ba89fbd-5425-46a9-b6bb-fb67f57bb875" SourceId="1" SourceUrl="http://demo.geminiapp.net/service/CASA.svc?xsd=xsd1" />
+    <MetadataFile FileName="CASA.disco" MetadataType="Disco" ID="35f886e5-eb1a-4033-ac82-2f03f08e3bac" SourceId="1" SourceUrl="http://demo.geminiapp.net/service/CASA.svc?disco" />
+    <MetadataFile FileName="CASA2.xsd" MetadataType="Schema" ID="3782afad-95cb-4091-b401-da7bf9711e6b" SourceId="1" SourceUrl="http://demo.geminiapp.net/service/CASA.svc?xsd=xsd2" />
+    <MetadataFile FileName="CASA.wsdl" MetadataType="Wsdl" ID="f1e7330e-f27e-480b-82c0-dfcf10ae5ce9" SourceId="1" SourceUrl="http://demo.geminiapp.net/service/CASA.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

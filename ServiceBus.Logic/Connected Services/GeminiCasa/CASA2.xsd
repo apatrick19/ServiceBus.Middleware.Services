@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="BalanceInquiry">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AccountType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BankVerificationNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BookBalance" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ClearedBalance" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FreezeCode" type="xs:short" />
+      <xs:element minOccurs="0" name="ResponseCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResponseMessage" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BalanceInquiry" nillable="true" type="tns:BalanceInquiry" />
+  <xs:complexType name="FundRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Amount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChannelID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Narration" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TrxnReferenceNo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FundRequest" nillable="true" type="tns:FundRequest" />
+  <xs:complexType name="TrxnResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Amount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResponseCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResponseMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TrxnRefNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TrxnType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TrxnResponse" nillable="true" type="tns:TrxnResponse" />
+  <xs:complexType name="CASAFTRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChannelID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DestinationAcctNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Narration" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OriginAcctNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TrxnReferenceNo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CASAFTRequest" nillable="true" type="tns:CASAFTRequest" />
+  <xs:complexType name="FTTrxnResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DestinationAcctNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OriginAcctNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResponseCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResponseMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TrxnRefNo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FTTrxnResponse" nillable="true" type="tns:FTTrxnResponse" />
+  <xs:complexType name="CASAccountRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustData" nillable="true" type="tns:CustomerData" />
+      <xs:element minOccurs="0" name="ProductCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CASAccountRequest" nillable="true" type="tns:CASAccountRequest" />
+  <xs:complexType name="CustomerData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BirthDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustGroupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Employer" nillable="true" type="tns:Employment" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Identification" nillable="true" type="tns:IDType" />
+      <xs:element minOccurs="0" name="Info" nillable="true" type="tns:OtherInfo" />
+      <xs:element minOccurs="0" name="Kin" nillable="true" type="tns:NextofKin" />
+      <xs:element minOccurs="0" name="LGACode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Landmark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaidenName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaritalStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MiddleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StateCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomerData" nillable="true" type="tns:CustomerData" />
+  <xs:complexType name="Employment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EducationLevel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmployedDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmployerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmploymentStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LGACode" type="xs:short" />
+      <xs:element minOccurs="0" name="Landmark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MonthlyIncome" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayDay" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PensionNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SectorCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StaffID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StateCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaxNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TelephoneNo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Employment" nillable="true" type="tns:Employment" />
+  <xs:complexType name="IDType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExpiryDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Identification" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdentificationNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IssuedDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherIdentification" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IDType" nillable="true" type="tns:IDType" />
+  <xs:complexType name="OtherInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BVNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BankCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChildrenCount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HouseholdCount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LoanRepayment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResidentialStatus" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OtherInfo" nillable="true" type="tns:OtherInfo" />
+  <xs:complexType name="NextofKin">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmployerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KinName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LGACode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Landmark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Relationship" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StateCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TitleKey" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NextofKin" nillable="true" type="tns:NextofKin" />
+  <xs:complexType name="AccountInquiry">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BankVerificationNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResponseCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SessionID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AccountInquiry" nillable="true" type="tns:AccountInquiry" />
+  <xs:complexType name="CASATrxnByTypeInquiry">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CASATrxnByTypeInquiry" nillable="true" type="tns:CASATrxnByTypeInquiry" />
+  <xs:complexType name="TrxnStatement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResponseCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResponseMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TrxnList" nillable="true" type="tns:CASATrxnByTypeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TrxnStatement" nillable="true" type="tns:TrxnStatement" />
+  <xs:complexType name="CASATrxnByTypeList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CASATrxns" nillable="true" type="tns:ArrayOfCASATrxnByType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CASATrxnByTypeList" nillable="true" type="tns:CASATrxnByTypeList" />
+  <xs:complexType name="ArrayOfCASATrxnByType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CASATrxnByType" nillable="true" type="tns:CASATrxnByType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCASATrxnByType" nillable="true" type="tns:ArrayOfCASATrxnByType" />
+  <xs:complexType name="CASATrxnByType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Narration" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TrxnNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TrxnType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValueDate" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CASATrxnByType" nillable="true" type="tns:CASATrxnByType" />
+</xs:schema>

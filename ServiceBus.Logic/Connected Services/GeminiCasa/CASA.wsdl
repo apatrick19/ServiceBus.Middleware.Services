@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="CASA" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://demo.geminiapp.net/service/CASA.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://demo.geminiapp.net/service/CASA.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://demo.geminiapp.net/service/CASA.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICASA_BalanceInquiry_InputMessage">
+    <wsdl:part name="parameters" element="tns:BalanceInquiry" />
+  </wsdl:message>
+  <wsdl:message name="ICASA_BalanceInquiry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BalanceInquiryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICASA_FundDeposit_InputMessage">
+    <wsdl:part name="parameters" element="tns:FundDeposit" />
+  </wsdl:message>
+  <wsdl:message name="ICASA_FundDeposit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FundDepositResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICASA_Fundwithdrawal_InputMessage">
+    <wsdl:part name="parameters" element="tns:Fundwithdrawal" />
+  </wsdl:message>
+  <wsdl:message name="ICASA_Fundwithdrawal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FundwithdrawalResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICASA_FundTransfer_InputMessage">
+    <wsdl:part name="parameters" element="tns:FundTransfer" />
+  </wsdl:message>
+  <wsdl:message name="ICASA_FundTransfer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FundTransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICASA_OpenNewCASA_InputMessage">
+    <wsdl:part name="parameters" element="tns:OpenNewCASA" />
+  </wsdl:message>
+  <wsdl:message name="ICASA_OpenNewCASA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OpenNewCASAResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICASA_GetTransactionInquiry_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTransactionInquiry" />
+  </wsdl:message>
+  <wsdl:message name="ICASA_GetTransactionInquiry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTransactionInquiryResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICASA">
+    <wsdl:operation name="BalanceInquiry">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICASA/BalanceInquiry" message="tns:ICASA_BalanceInquiry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICASA/BalanceInquiryResponse" message="tns:ICASA_BalanceInquiry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FundDeposit">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICASA/FundDeposit" message="tns:ICASA_FundDeposit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICASA/FundDepositResponse" message="tns:ICASA_FundDeposit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Fundwithdrawal">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICASA/Fundwithdrawal" message="tns:ICASA_Fundwithdrawal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICASA/FundwithdrawalResponse" message="tns:ICASA_Fundwithdrawal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FundTransfer">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICASA/FundTransfer" message="tns:ICASA_FundTransfer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICASA/FundTransferResponse" message="tns:ICASA_FundTransfer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OpenNewCASA">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICASA/OpenNewCASA" message="tns:ICASA_OpenNewCASA_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICASA/OpenNewCASAResponse" message="tns:ICASA_OpenNewCASA_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionInquiry">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICASA/GetTransactionInquiry" message="tns:ICASA_GetTransactionInquiry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICASA/GetTransactionInquiryResponse" message="tns:ICASA_GetTransactionInquiry_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="CASA" />
+</wsdl:definitions>

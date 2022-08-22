@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5AB0E9D7-5917-4167-BD2E-ECBE9FAED00D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ServiceBus.Logic</RootNamespace>
+    <AssemblyName>ServiceBus.Logic</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CsvHelper, Version=12.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <HintPath>..\packages\CsvHelper.12.1.2\lib\net45\CsvHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Hangfire.Core, Version=1.7.18.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hangfire.Core.1.7.18\lib\net46\Hangfire.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Hangfire.SqlServer, Version=1.7.18.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hangfire.SqlServer.1.7.18\lib\net45\Hangfire.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\Dll\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SharePoint.Client.14.0.4762.1000\lib\Microsoft.SharePoint.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Runtime, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SharePoint.Client.14.0.4762.1000\lib\Microsoft.SharePoint.Client.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=106.6.10.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.6.10\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connected Services\GeminiCasa\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Contracts\BankOne\IBankOneAccountCreationIntegration.cs" />
+    <Compile Include="Contracts\BankOne\IAccountByAccountNoIntegration.cs" />
+    <Compile Include="Contracts\BankOne\IAccountCreationService.cs" />
+    <Compile Include="Contracts\BankOne\IAccountValidationService.cs" />
+    <Compile Include="Contracts\BankOne\IBankOneBVNValidationIntegration.cs" />
+    <Compile Include="Contracts\BankOne\IBankOneTransactionIntegration.cs" />
+    <Compile Include="Contracts\Helpers\IApiPostAndGet.cs" />
+    <Compile Include="Contracts\BankOne\IBillerLogicService.cs" />
+    <Compile Include="Contracts\BankOne\IBankOneCardIntegration.cs" />
+    <Compile Include="Contracts\BankOne\IBankOneCoreBankingAuthentication.cs" />
+    <Compile Include="Contracts\Helpers\ICryptography.cs" />
+    <Compile Include="Contracts\BankOne\IDuplicateDetection.cs" />
+    <Compile Include="Contracts\BankOne\IFileConverter.cs" />
+    <Compile Include="Contracts\BankOne\ILoanIntegration.cs" />
+    <Compile Include="Contracts\BankOne\IMessenger.cs" />
+    <Compile Include="Contracts\BankOne\ITransferIntegration.cs" />
+    <Compile Include="Contracts\BankOne\IPostingService.cs" />
+    <Compile Include="Contracts\Helpers\IResponseDictionary.cs" />
+    <Compile Include="Contracts\Helpers\IResult.cs" />
+    <Compile Include="Contracts\Helpers\IServiceFtp.cs" />
+    <Compile Include="Contracts\Helpers\ISharePointManager.cs" />
+    <Compile Include="Contracts\BankOne\ITransferLogicService.cs" />
+    <Compile Include="Contracts\Service-Contracts\IAccountGenericService.cs" />
+    <Compile Include="Contracts\Service-Contracts\IOperatorService.cs" />
+    <Compile Include="Contracts\Service-Contracts\ITransactionGenericService.cs" />
+    <Compile Include="Implementations\IO\FileManager\ConnectToSharedFolder.cs" />
+    <Compile Include="Implementations\IO\FileManager\DownloadManager.cs" />
+    <Compile Include="Implementations\IO\FileManager\FileConverter.cs" />
+    <Compile Include="Implementations\IO\ServiceFTP.cs" />
+    <Compile Include="Implementations\Logger\LogMachine.cs" />
+    <Compile Include="Implementations\Memory\InMemory.cs" />
+    <Compile Include="Implementations\Messenger.cs" />
+    <Compile Include="Implementations\Model\EmployerModel.cs" />
+    <Compile Include="Implementations\Rest\ApiPostAndGet.cs" />
+    <Compile Include="Implementations\Result\ResponseDictionary.cs" />
+    <Compile Include="Implementations\Result\Result.cs" />
+    <Compile Include="Implementations\Rules\DuplicateDetection.cs" />
+    <Compile Include="Implementations\Security\AuditClass.cs" />
+    <Compile Include="Implementations\Security\Cryptography.cs" />
+    <Compile Include="Implementations\SharePoint\SharePointFolder.cs" />
+    <Compile Include="Implementations\SharePoint\SharePointManager.cs" />
+    <Compile Include="Implementations\Xml\XmlConverter.cs" />
+    <Compile Include="Integration\BankOne\BankOneAccountByAccountNoIntegration.cs" />
+    <Compile Include="Integration\BankOne\BankOneAccountCreationIntegration.cs" />
+    <Compile Include="Integration\BankOne\BankOneBVNValidationIntegration.cs" />
+    <Compile Include="Integration\BankOne\BankOneTransactionIntegration.cs" />
+    <Compile Include="Integration\Gemini\GeminiAccountByAccountNoIntegration.cs" />
+    <Compile Include="Integration\Strategy\Concrete\AccountByAccountNoIntegrationRepository.cs" />
+    <Compile Include="Integration\Strategy\Contract\IAccountByAccountNoIntegrationRepository.cs" />
+    <Compile Include="OldService\AccountCreationService.cs" />
+    <Compile Include="Service\AccountGenericService.cs" />
+    <Compile Include="OldService\AccountValidationService.cs" />
+    <Compile Include="OldService\BillerLogicService.cs" />
+    <Compile Include="Integration\BankOne\BankOneCardIntegration.cs" />
+    <Compile Include="Integration\BankOne\BankOneCoreBankingAuthentication.cs" />
+    <Compile Include="Integration\BankOne\Messenger.cs" />
+    <Compile Include="Integration\BankOne\Portal\AccountLogic.cs" />
+    <Compile Include="Integration\BankOne\Portal\CardsLogic.cs" />
+    <Compile Include="Integration\BankOne\Portal\ReportLogic.cs" />
+    <Compile Include="Integration\BankOne\Portal\TransferLogic.cs" />
+    <Compile Include="Integration\BankOne\Portal\TrxLogic.cs" />
+    <Compile Include="Integration\BankOne\Portal\UserLogic.cs" />
+    <Compile Include="Integration\BankOne\RestPostRequestIntegration.cs" />
+    <Compile Include="Integration\BankOne\BankOneTransferIntegration.cs" />
+    <Compile Include="Integration\BankOne\PostingIntegrationService.cs" />
+    <Compile Include="Service\LogService.cs" />
+    <Compile Include="OldService\TransferLogicService.cs" />
+    <Compile Include="Integration\BankOne\Portal\GenericLogic.cs" />
+    <Compile Include="Model\BankOne\BankOneAccountCreationApiRequest.cs" />
+    <Compile Include="Model\BankOne\AccountCreationApiResultModel.cs" />
+    <Compile Include="Model\BankOne\AccountDetailsModel.cs" />
+    <Compile Include="Model\BankOne\AccountEnquiryModel.cs" />
+    <Compile Include="Model\BankOne\BankOneAccountSummaryModel.cs" />
+    <Compile Include="Model\BankOne\BankOneSMSRequest.cs" />
+    <Compile Include="Model\BankOne\BankoneSMSResponse.cs" />
+    <Compile Include="Model\BankOne\BankoneTransactionHistoryResponse.cs" />
+    <Compile Include="Model\BankOne\BaseAirtimeProduct.cs" />
+    <Compile Include="Model\BankOne\BasePaymentAdviceRequest.cs" />
+    <Compile Include="Model\BankOne\BaseRequest.cs" />
+    <Compile Include="Model\BankOne\BeneficiaryModel.cs" />
+    <Compile Include="Model\BankOne\BillsPaymentResponse.cs" />
+    <Compile Include="Model\BankOne\BVNRequest.cs" />
+    <Compile Include="Model\BankOne\BVNResponse.cs" />
+    <Compile Include="Model\BankOne\CardConfigurationResponse.cs" />
+    <Compile Include="Model\BankOne\CardRequestModel.cs" />
+    <Compile Include="Model\BankOne\CardResponseModel.cs" />
+    <Compile Include="Model\BankOne\CoreBankingBasicAccountInfoModel.cs" />
+    <Compile Include="Model\BankOne\CoreBankingListAccountModel.cs" />
+    <Compile Include="Model\BankOne\CustomerCardRequestModel.cs" />
+    <Compile Include="Model\BankOne\CustomerCardResponseModel.cs" />
+    <Compile Include="Model\BankOne\DeliveryOptionReponse.cs" />
+    <Compile Include="Model\BankOne\HotlistRequestModel.cs" />
+    <Compile Include="Model\BankOne\HotlistResponseModel.cs" />
+    <Compile Include="Model\BankOne\LoanRequestModel.cs" />
+    <Compile Include="Model\BankOne\LoanResponseModel.cs" />
+    <Compile Include="Model\BankOne\PortalModel\AccountCreationResponse.cs" />
+    <Compile Include="Model\BankOne\PortalModel\AccountListResponse.cs" />
+    <Compile Include="Model\BankOne\PortalModel\AccountReportRequest.cs" />
+    <Compile Include="Model\BankOne\PortalModel\AccountReportResponse.cs" />
+    <Compile Include="Model\BankOne\PortalModel\BaseListResult.cs" />
+    <Compile Include="Model\BankOne\PortalModel\BaseResponse.cs" />
+    <Compile Include="Model\BankOne\PortalModel\BaseResultList.cs" />
+    <Compile Include="Model\BankOne\PortalModel\CustomerAndAccountResponse.cs" />
+    <Compile Include="Model\BankOne\PortalModel\DataPoint.cs" />
+    <Compile Include="Model\BankOne\PortalModel\DropdownResponse.cs" />
+    <Compile Include="Model\BankOne\PortalModel\LocalTransferNameEnquiryResponse.cs" />
+    <Compile Include="Model\BankOne\PortalModel\LocalTransferRequest.cs" />
+    <Compile Include="Model\BankOne\PortalModel\PasswordChangeRequest.cs" />
+    <Compile Include="Model\BankOne\PortalModel\RegionCreationRequest.cs" />
+    <Compile Include="Model\BankOne\PortalModel\TransferNameEnquiryRequest.cs" />
+    <Compile Include="Model\BankOne\PortalModel\UserBaseResponse.cs" />
+    <Compile Include="Model\BankOne\PortalModel\UserCreationRequest.cs" />
+    <Compile Include="Model\BankOne\PortalModel\UserTypeCreationRequest.cs" />
+    <Compile Include="Model\BankOne\PostingResponse.cs" />
+    <Compile Include="Model\BankOne\CoreBankingSingleAccountModel.cs" />
+    <Compile Include="Model\BankOne\ChangePassword.cs" />
+    <Compile Include="Model\BankOne\ChangePinModel.cs" />
+    <Compile Include="Model\BankOne\CorebankingAuthModel.cs" />
+    <Compile Include="Model\BankOne\CustomerApiRequest.cs" />
+    <Compile Include="Model\BankOne\CustomerApiResponse.cs" />
+    <Compile Include="Model\BankOne\CustomerCreationResultModel.cs" />
+    <Compile Include="Model\BankOne\CustomerValidation.cs" />
+    <Compile Include="Model\BankOne\DeviceUpdate.cs" />
+    <Compile Include="Model\BankOne\ExistingAccountModel.cs" />
+    <Compile Include="Model\BankOne\ForgotPasswordModel.cs" />
+    <Compile Include="Model\BankOne\FreezeAccountRequest.cs" />
+    <Compile Include="Model\BankOne\FreezeAccountResponse.cs" />
+    <Compile Include="Model\BankOne\FreezeStatus.cs" />
+    <Compile Include="Model\BankOne\LoginModel.cs" />
+    <Compile Include="Model\BankOne\AccountRequest.cs" />
+    <Compile Include="Model\BankOne\NewAccountResult.cs" />
+    <Compile Include="Model\BankOne\PlaceLienModel.cs" />
+    <Compile Include="Model\BankOne\ReversalRequest.cs" />
+    <Compile Include="Model\BankOne\ReversalResponse.cs" />
+    <Compile Include="Model\BankOne\SMSRequestModel.cs" />
+    <Compile Include="Model\BankOne\TransactionQueryRequest.cs" />
+    <Compile Include="Model\BankOne\TransactionQueryResponse.cs" />
+    <Compile Include="Model\BankOne\PostingModel.cs" />
+    <Compile Include="Model\BankOne\BankModel.cs" />
+    <Compile Include="Model\BankOne\Quickteller\BaseCategory.cs" />
+    <Compile Include="Model\BankOne\Quickteller\BillersResponse.cs" />
+    <Compile Include="Model\BankOne\Quickteller\Categories.cs" />
+    <Compile Include="Model\BankOne\Quickteller\PaymentItemsResponse.cs" />
+    <Compile Include="Model\BankOne\TransactionBaseResponse.cs" />
+    <Compile Include="Model\BankOne\TransactionCoreResponse.cs" />
+    <Compile Include="Model\BankOne\TransactionHistoryBaseRequest.cs" />
+    <Compile Include="Model\BankOne\TransferModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\OperatorService.cs" />
+    <Compile Include="Service\TransactionGenericService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ServiceBus.Core\ServiceBus.Core.csproj">
+      <Project>{11f0b203-aa56-452e-8bd5-c5b540047dd5}</Project>
+      <Name>ServiceBus.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServiceBus.Data\ServiceBus.Data.csproj">
+      <Project>{f09b0567-fa84-4a86-affa-e87a40703ad7}</Project>
+      <Name>ServiceBus.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Connected Services\GeminiCasa\CASA.wsdl" />
+    <None Include="Connected Services\GeminiCasa\CASA.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GeminiCasa\CASA1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GeminiCasa\CASA2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GeminiCasa\ServiceBus.Logic.GeminiCasa.AccountInquiry.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\GeminiCasa\ServiceBus.Logic.GeminiCasa.BalanceInquiry.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\GeminiCasa\ServiceBus.Logic.GeminiCasa.FTTrxnResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\GeminiCasa\ServiceBus.Logic.GeminiCasa.TrxnResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\GeminiCasa\ServiceBus.Logic.GeminiCasa.TrxnStatement.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\GeminiCasa\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\GeminiCasa\CASA.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\GeminiCasa\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\GeminiCasa\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\GeminiCasa\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

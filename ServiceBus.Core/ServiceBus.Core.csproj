@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{11F0B203-AA56-452E-8BD5-C5B540047DD5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ServiceBus.Core</RootNamespace>
+    <AssemblyName>ServiceBus.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=9.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.9.0.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseService.cs" />
+    <Compile Include="Contracts\Bank.Interface\IAccount.cs" />
+    <Compile Include="Contracts\Bank.Interface\IAirtimeRequest.cs" />
+    <Compile Include="Contracts\Bank.Interface\IDocument.cs" />
+    <Compile Include="Contracts\Generic.Interface\AgentLocator.cs" />
+    <Compile Include="Contracts\Generic.Interface\IAccountDocument.cs" />
+    <Compile Include="Contracts\Generic.Interface\IAccountStatus.cs" />
+    <Compile Include="Contracts\Generic.Interface\IAgent.cs" />
+    <Compile Include="Contracts\Generic.Interface\IAirtimeBiller.cs" />
+    <Compile Include="Contracts\Generic.Interface\IAuditTrail.cs" />
+    <Compile Include="Contracts\Generic.Interface\IBank.cs" />
+    <Compile Include="Contracts\Generic.Interface\IBenefitStatus.cs" />
+    <Compile Include="Contracts\Generic.Interface\IBillingCategory.cs" />
+    <Compile Include="Contracts\Generic.Interface\IBillingMerchant.cs" />
+    <Compile Include="Contracts\Generic.Interface\IBlocked.cs" />
+    <Compile Include="Contracts\Generic.Interface\IBranch.cs" />
+    <Compile Include="Contracts\Generic.Interface\ICableBouque.cs" />
+    <Compile Include="Contracts\Generic.Interface\ICablePaymentRequest.cs" />
+    <Compile Include="Contracts\Generic.Interface\ICaseStatus.cs" />
+    <Compile Include="Contracts\Generic.Interface\IChannelActivities.cs" />
+    <Compile Include="Contracts\Generic.Interface\IChannels.cs" />
+    <Compile Include="Contracts\Generic.Interface\IChannelSource.cs" />
+    <Compile Include="Contracts\Generic.Interface\IClientStatus.cs" />
+    <Compile Include="Contracts\Generic.Interface\IClientType.cs" />
+    <Compile Include="Contracts\Generic.Interface\ICommunicationMethod.cs" />
+    <Compile Include="Contracts\Generic.Interface\ICompetitor.cs" />
+    <Compile Include="Contracts\Generic.Interface\IConsolidatedSalary.cs" />
+    <Compile Include="Contracts\Generic.Interface\ICountry.cs" />
+    <Compile Include="Contracts\Generic.Interface\ICustomerKYCCategory.cs" />
+    <Compile Include="Contracts\Generic.Interface\IDOBSource.cs" />
+    <Compile Include="Contracts\Generic.Interface\IDropdown.cs" />
+    <Compile Include="Contracts\Generic.Interface\IECRSResponse.cs" />
+    <Compile Include="Contracts\Generic.Interface\IEmail.cs" />
+    <Compile Include="Contracts\Generic.Interface\IEntity.cs" />
+    <Compile Include="Contracts\Generic.Interface\IEntityStatus.cs" />
+    <Compile Include="Contracts\Generic.Interface\IEsteemCategory.cs" />
+    <Compile Include="Contracts\Generic.Interface\IExceptions.cs" />
+    <Compile Include="Contracts\Generic.Interface\IFAQS.cs" />
+    <Compile Include="Contracts\Generic.Interface\IFlagDescription.cs" />
+    <Compile Include="Contracts\Generic.Interface\IFundType.cs" />
+    <Compile Include="Contracts\Generic.Interface\IGender.cs" />
+    <Compile Include="Contracts\Generic.Interface\IHarmonizedSalary.cs" />
+    <Compile Include="Contracts\Generic.Interface\IIndustry.cs" />
+    <Compile Include="Contracts\Generic.Interface\ILga.cs" />
+    <Compile Include="Contracts\Generic.Interface\ILumpsumOption.cs" />
+    <Compile Include="Contracts\Generic.Interface\IMaritalStatus.cs" />
+    <Compile Include="Contracts\Generic.Interface\IMerchantProduct.cs" />
+    <Compile Include="Contracts\Generic.Interface\IModeOfExit.cs" />
+    <Compile Include="Contracts\Generic.Interface\INationality.cs" />
+    <Compile Include="Contracts\Generic.Interface\INotificationLogger.cs" />
+    <Compile Include="Contracts\Generic.Interface\IPaymentFrequency.cs" />
+    <Compile Include="Contracts\Generic.Interface\IProofOfAddress.cs" />
+    <Compile Include="Contracts\Generic.Interface\IProofOfIdentity.cs" />
+    <Compile Include="Contracts\Generic.Interface\IQualification.cs" />
+    <Compile Include="Contracts\Generic.Interface\IRelationship.cs" />
+    <Compile Include="Contracts\Generic.Interface\IRelayLogger.cs" />
+    <Compile Include="Contracts\Generic.Interface\IReligion.cs" />
+    <Compile Include="Contracts\Generic.Interface\IRemittancePattern.cs" />
+    <Compile Include="Contracts\Generic.Interface\IResponse.cs" />
+    <Compile Include="Contracts\Generic.Interface\ISalaryGL.cs" />
+    <Compile Include="Contracts\Generic.Interface\ISalaryStep.cs" />
+    <Compile Include="Contracts\Generic.Interface\ISalaryType.cs" />
+    <Compile Include="Contracts\Generic.Interface\ISector.cs" />
+    <Compile Include="Contracts\Generic.Interface\ISMS.cs" />
+    <Compile Include="Contracts\Generic.Interface\ISourceOfFunding.cs" />
+    <Compile Include="Contracts\Generic.Interface\ISourceOfRequest.cs" />
+    <Compile Include="Contracts\Generic.Interface\IState.cs" />
+    <Compile Include="Contracts\Generic.Interface\IStatementOption.cs" />
+    <Compile Include="Contracts\Generic.Interface\IStatus.cs" />
+    <Compile Include="Contracts\Generic.Interface\ISystemUser.cs" />
+    <Compile Include="Contracts\Generic.Interface\ITeam.cs" />
+    <Compile Include="Contracts\Generic.Interface\ITitle.cs" />
+    <Compile Include="Contracts\Generic.Interface\IUser.cs" />
+    <Compile Include="DataTransferObject\AccountCreationResponse.cs" />
+    <Compile Include="DataTransferObject\AccountEnquiryResponse.cs" />
+    <Compile Include="DataTransferObject\BVNValidationRequest.cs" />
+    <Compile Include="DataTransferObject\BVNValidationResponse.cs" />
+    <Compile Include="DataTransferObject\GetAccountBalanceRequest.cs" />
+    <Compile Include="DataTransferObject\GetAccountBalanceResponse.cs" />
+    <Compile Include="DataTransferObject\GetAccountByAccountNoRequest.cs" />
+    <Compile Include="DataTransferObject\GetAccountByAccountNoResponse.cs" />
+    <Compile Include="DataTransferObject\GetBalanceRequest.cs" />
+    <Compile Include="DataTransferObject\GetBalanceResponse.cs" />
+    <Compile Include="DataTransferObject\GetMiniStatementRequest.cs" />
+    <Compile Include="DataTransferObject\GetMiniStatementResponse.cs" />
+    <Compile Include="DataTransferObject\GetTransactionHistoryRequest.cs" />
+    <Compile Include="DataTransferObject\GetTransactionHistoryResponse.cs" />
+    <Compile Include="DataTransferObject\Response.cs" />
+    <Compile Include="DataTransferObject\SecurityRequest.cs" />
+    <Compile Include="DataTransferObject\StatementBaseResponse.cs" />
+    <Compile Include="DataTransferObject\Transfer\FundsTransferRequest.cs" />
+    <Compile Include="DataTransferObject\Transfer\FundTransferApiRequest.cs" />
+    <Compile Include="DataTransferObject\Transfer\FundTransferResponse.cs" />
+    <Compile Include="DataTransferObject\Transfer\LocalFundTransferRequest.cs" />
+    <Compile Include="DataTransferObject\Transfer\LocalTransferApiRequest.cs" />
+    <Compile Include="DataTransferObject\Transfer\LocalTransferResponse.cs" />
+    <Compile Include="DataTransferObject\Transfer\NameEnquiryRequest.cs" />
+    <Compile Include="DataTransferObject\Transfer\NameEnquiryResponse.cs" />
+    <Compile Include="enums\OperatorEnum.cs" />
+    <Compile Include="Model\Bank\Account.cs" />
+    <Compile Include="Model\Bank\AccountTier.cs" />
+    <Compile Include="Model\Bank\AirtimeRequest.cs" />
+    <Compile Include="Model\Bank\Beneficiary.cs" />
+    <Compile Include="Model\Bank\CablePaymentRequest.cs" />
+    <Compile Include="Model\Bank\CardHotListLog.cs" />
+    <Compile Include="Model\Bank\LienLog.cs" />
+    <Compile Include="Model\Bank\StatementRequestLog.cs" />
+    <Compile Include="Model\Bank\Transaction.cs" />
+    <Compile Include="Model\Bank\ServiceType.cs" />
+    <Compile Include="Model\Bank\Transfer.cs" />
+    <Compile Include="Model\ControllerModel\AirtimeRequestModel.cs" />
+    <Compile Include="Model\ControllerModel\BillsPaymentRequestModel.cs" />
+    <Compile Include="Model\Generic\AccountStatus.cs" />
+    <Compile Include="Model\Generic\Agent.cs" />
+    <Compile Include="Model\Generic\AirtimeBiller.cs" />
+    <Compile Include="Model\Generic\AuditTrail.cs" />
+    <Compile Include="Model\Generic\Bank.cs" />
+    <Compile Include="Model\Generic\BillingCategory.cs" />
+    <Compile Include="Model\Generic\Billers.cs" />
+    <Compile Include="Model\Generic\BillsPaymentTransaction.cs" />
+    <Compile Include="Model\Generic\Blocked.cs" />
+    <Compile Include="Model\Generic\Branch.cs" />
+    <Compile Include="Model\Generic\CableBouque.cs" />
+    <Compile Include="Model\Generic\CableProviders.cs" />
+    <Compile Include="Model\Generic\CardRequest.cs" />
+    <Compile Include="Model\Generic\ChannelActivities.cs" />
+    <Compile Include="Model\Generic\Channels.cs" />
+    <Compile Include="Model\Generic\ChannelSource.cs" />
+    <Compile Include="Model\Generic\ClientDocument.cs" />
+    <Compile Include="Model\Generic\ClientStatus.cs" />
+    <Compile Include="Model\Generic\ClientType.cs" />
+    <Compile Include="Model\Generic\CommunicationMethod.cs" />
+    <Compile Include="Model\Generic\Competitor.cs" />
+    <Compile Include="Model\Generic\Country.cs" />
+    <Compile Include="Model\Generic\Complaints.cs" />
+    <Compile Include="Model\Generic\CustomerKYCCategory.cs" />
+    <Compile Include="Model\Generic\Dropdown.cs" />
+    <Compile Include="Model\Generic\Email.cs" />
+    <Compile Include="Model\Generic\Entity.cs" />
+    <Compile Include="Model\Generic\EntityStatus.cs" />
+    <Compile Include="Model\Generic\Exceptions.cs" />
+    <Compile Include="Model\Generic\FAQS.cs" />
+    <Compile Include="Model\Generic\Gender.cs" />
+    <Compile Include="Model\Generic\IAgentLocator.cs" />
+    <Compile Include="Model\Generic\IMerchantProduct.cs" />
+    <Compile Include="Model\Generic\Industry.cs" />
+    <Compile Include="Model\Generic\IPAddresses.cs" />
+    <Compile Include="Model\Generic\Lga.cs" />
+    <Compile Include="Model\Generic\MaritalStatus.cs" />
+    <Compile Include="Model\Generic\MembershipModel.cs" />
+    <Compile Include="Model\Generic\MerchantProduct.cs" />
+    <Compile Include="Model\Generic\Messaging.cs" />
+    <Compile Include="Model\Generic\ModeOfExit.cs" />
+    <Compile Include="Model\Generic\TokenGen.cs" />
+    <Compile Include="Model\Generic\UserRoleModules.cs" />
+    <Compile Include="Model\Generic\Nationality.cs" />
+    <Compile Include="Model\Generic\NINAttestationModel.cs" />
+    <Compile Include="Model\Generic\NotificationLogger.cs" />
+    <Compile Include="Model\Generic\PaymentFrequency.cs" />
+    <Compile Include="Model\Generic\Region.cs" />
+    <Compile Include="Model\Generic\Transactions.cs" />
+    <Compile Include="Model\Generic\ProofOfAddress.cs" />
+    <Compile Include="Model\Generic\ProofOfIdentity.cs" />
+    <Compile Include="Model\Generic\Qualification.cs" />
+    <Compile Include="Model\Generic\ReferenceLettersModel.cs" />
+    <Compile Include="Model\Generic\Relationship.cs" />
+    <Compile Include="Model\Generic\RelayLogger.cs" />
+    <Compile Include="Model\Generic\Religion.cs" />
+    <Compile Include="Model\Generic\RemittancePattern.cs" />
+    <Compile Include="Model\Generic\Response.cs" />
+    <Compile Include="Model\Generic\Reversal.cs" />
+    <Compile Include="Model\Generic\Sector.cs" />
+    <Compile Include="Model\Generic\SMS.cs" />
+    <Compile Include="Model\Generic\State.cs" />
+    <Compile Include="Model\Generic\StatementOption.cs" />
+    <Compile Include="Model\Generic\Status.cs" />
+    <Compile Include="Model\Generic\SystemUser.cs" />
+    <Compile Include="Model\Generic\Team.cs" />
+    <Compile Include="Model\Generic\Title.cs" />
+    <Compile Include="Model\Generic\User.cs" />
+    <Compile Include="Model\Generic\UserType.cs" />
+    <Compile Include="DataTransferObject\Request.cs" />
+    <Compile Include="Model\Operator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings\AppConfig.cs" />
+    <Compile Include="Settings\ECRSResponseModel.cs" />
+    <Compile Include="Settings\GenericResponseModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
